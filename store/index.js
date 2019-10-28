@@ -2,9 +2,9 @@ export const actions = {
   async nuxtServerInit({ dispatch }, context) {
     const cookies = context.app.$cookies.getAll()
     const cookiesOk =
-      cookies.hasOwnProperty('user') &&
-      cookies.hasOwnProperty('client_secret') &&
-      cookies.hasOwnProperty('client_id')
+      Object.prototype.hasOwnProperty.call(cookies, 'user') &&
+      Object.prototype.hasOwnProperty.call(cookies, 'client_secret') &&
+      Object.prototype.hasOwnProperty.call(cookies, 'client_id')
     const payload = {
       user: cookies.user || {},
       success: false
@@ -12,7 +12,7 @@ export const actions = {
 
     if (cookiesOk) {
       let statusCode = 200
-      if (!cookies.hasOwnProperty('token')) {
+      if (!Object.prototype.hasOwnProperty.call(cookies, 'token')) {
         const res = await context.app.$api.auth.getToken(
           cookies.client_id,
           cookies.client_secret

@@ -54,7 +54,7 @@ export default {
    ** Axios module configuration
    */
   axios: {
-    baseURL: 'http://localhost:8080/ords/main'
+    baseURL: 'https://mk8snm8youhshyh-db201910011626.adb.eu-frankfurt-1.oraclecloudapps.com/ords/main'
   },
 
   /*

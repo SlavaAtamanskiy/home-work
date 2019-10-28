@@ -1,5 +1,5 @@
 <template>
-  <el-card>
+  <el-card class="public-form">
     <h2>Register</h2>
     <el-form
       ref="Form"

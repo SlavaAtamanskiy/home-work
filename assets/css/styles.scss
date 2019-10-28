@@ -2,6 +2,7 @@
 
 $emerald: #009cad;
 $grey: #c0cbd6;
+$deep_grey: #a0adba;
 
 //------------GLOBAL STYLES------------//
 
@@ -129,39 +130,47 @@ a {
 }
 
 //------------REGISTER, LOGIN-----------------//
-.login-form,
-.register-form {
+
+.public-form {
   width: 290px;
+  margin: 2rem 0;
+  h2 {
+    font-family: 'Open Sans';
+    letter-spacing: 1px;
+    font-family: Roboto, sans-serif;
+    color: $deep_grey;
+  }
+  p {
+    color: $deep_grey;
+  }
 }
 
 .el-button--primary {
   background: #007c89;
   border-color: #007c89;
   width: 100%;
-}
-.el-button--primary:hover,
-.el-button--primary.active,
-.el-button--primary:focus {
-  background: #009cad;
-  border-color: #009cad;
-}
-.reset-button {
-  background: #ffff;
-  color: #c0cbd6;
-  border-color: #c0cbd6;
-  width: 100%;
-}
-.reset-button:hover,
-.reset-button.active {
-  background: #c0cbd6;
-  border-color: #c0cbd6;
-  color: #ffff;
+  &:hover,
+  &:active,
+  &:focus {
+    background: $emerald;
+    border-color: $emerald;
+  }
 }
 
-.login .el-input__inner:hover,
-.register .el-input__inner:hover {
-  border-color: #007c89;
+.reset-button {
+  background: #ffff;
+  color: $grey;
+  border-color: $grey;
+  width: 100%;
+  &:hover,
+  &:active,
+  &:focus {
+    background: $grey;
+    border-color: $grey;
+    color: #ffff;
+  }
 }
+
 .login .el-input__prefix,
 .register .el-input__prefix {
   background: #eeedea;
@@ -182,12 +191,6 @@ a {
 .login .el-card,
 .register .el-card {
   padding-top: 0;
-}
-h2 {
-  font-family: 'Open Sans';
-  letter-spacing: 1px;
-  font-family: Roboto, sans-serif;
-  color: #a0adba;
 }
 .login .el-card,
 .register .el-card {

@@ -1,13 +1,7 @@
 <template>
-  <el-card>
+  <el-card class="public-form">
     <h2>Log-IN</h2>
-    <el-form
-      ref="Form"
-      :model="model"
-      :rules="rules"
-      status-icon
-      class="login-form"
-    >
+    <el-form ref="Form" :model="model" :rules="rules" status-icon>
       <el-form-item prop="login">
         <el-input
           v-model="model.login"
@@ -43,8 +37,8 @@
           type="info"
           block
           @click="resetForm('Form')"
-          >Reset</el-button
-        >
+          >Reset
+        </el-button>
       </el-form-item>
       <el-form-item>
         <p>
@@ -92,14 +86,17 @@ export default {
         if (valid) {
           const payload = {
             credentials: {
-              login: this.model.login,
+              login: this.model.login.toUpperCase(),
               password: this.model.pass
             },
             handleResponse: err => {
               if (err) {
-                const msg = err.hasOwnProperty('response')
+                const msg = Object.prototype.hasOwnProperty.call(
+                  err,
+                  'response'
+                )
                   ? err.response.data.message
-                  : err.message
+                  : 'err.message'
                 showMessage({
                   title: 'Error',
                   message: msg,
@@ -122,9 +119,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.login .el-card {
-  margin: 2rem 0;
-}
-</style>
