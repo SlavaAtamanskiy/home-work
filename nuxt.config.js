@@ -48,13 +48,15 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    'cookie-universal-nuxt'
+    'cookie-universal-nuxt',
+    '@nuxtjs/tailwindcss'
   ],
   /*
    ** Axios module configuration
    */
   axios: {
-    baseURL: 'https://mk8snm8youhshyh-db201910011626.adb.eu-frankfurt-1.oraclecloudapps.com/ords/main'
+    baseURL:
+      'https://mk8snm8youhshyh-db201910011626.adb.eu-frankfurt-1.oraclecloudapps.com/ords/main'
   },
 
   /*

@@ -1,0 +1,21 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.bg-cover-image {
+    background-image: url('../images/background.jpg');
+ }
+
+.card-container {
+  @apply fixed flex flex-row flex-wrap justify-center w-auto;
+}
+
+.card-container .card { 
+  @apply rounded overflow-hidden shadow-lg bg-white w-40 h-40;
+}
+
+
+
+
+
+
