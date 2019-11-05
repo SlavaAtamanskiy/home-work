@@ -1,52 +1,50 @@
 <template>
   <div class="card-container max-w-full min-h-xs">
-    <div class="card card-news">
-      <img
-        class="w-full"
-        src="../../assets/images/home_page/news.jpg"
-        alt="News"
-      />
-      <a href="#" class="button button-news">News</a>
-    </div>
-    <div class="card card-sing-up">
-      <img
-        class="w-full"
-        src="../../assets/images/home_page/register.jpg"
-        alt="News"
-      />
-      <nuxt-link to="/register" class="button button-sign-up"
-        >Sing up</nuxt-link
-      >
-    </div>
-    <div class="card card-sign-in">
-      <img
-        class="w-full"
-        src="../../assets/images/home_page/login.jpg"
-        alt="News"
-      />
-      <nuxt-link to="/login" class="button button-sign-in">Sing in</nuxt-link>
-    </div>
-    <div class="card card-support">
-      <img
-        class="w-full"
-        src="../../assets/images/home_page/support.jpg"
-        alt="News"
-      />
-      <a href="#" class="button button-support">Support</a>
-    </div>
-    <div class="card card-about">
-      <img
-        class="w-full"
-        src="../../assets/images/home_page/about.jpg"
-        alt="News"
-      />
-      <a href="#" class="button button-about">About</a>
+    <div v-for="(item, i) in items" :key="i" :class="item.class">
+      <img class="w-full" :src="baseURL + item.img" :alt="item.title" />
+      <nuxt-link :to="item.route" class="button">{{ item.title }}</nuxt-link>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Home'
+  name: 'Home',
+  data: () => ({
+    baseURL:
+      'https://raw.githubusercontent.com/SlavaAtamanskiy/home-work/master/assets/images/home_page/',
+    items: [
+      {
+        title: 'News',
+        class: 'card card-news',
+        img: 'news.jpg',
+        route: '#'
+      },
+      {
+        title: 'Sing up',
+        class: 'card card-sing-up',
+        img: 'register.jpg',
+        route: '/register'
+      },
+      {
+        title: 'Sing in',
+        class: 'card card-sing-in',
+        img: 'login.jpg',
+        route: '/login'
+      },
+      {
+        title: 'Support',
+        class: 'card card-support',
+        img: 'support.jpg',
+        route: '#'
+      },
+      {
+        title: 'About',
+        class: 'card card-about',
+        img: 'about.jpg',
+        route: '#'
+      }
+    ]
+  })
 }
 </script>
