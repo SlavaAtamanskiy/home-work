@@ -1,0 +1,28 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.card-container {
+    @apply fixed flex flex-row flex-wrap justify-center items-center w-auto;
+    & .card { 
+      @apply absolute rounded overflow-hidden shadow-lg bg-white w-40 h-40 text-center;
+      transition: transform 1s ease-in;
+      transition-delay: 1s;
+    }
+    &:hover .card {
+      transition-delay: 0s;
+    }
+    &:hover .card-news {
+      transform: translateX(-26rem);
+    }
+    &:hover .card-sing-up {
+      transform: translateX(-13rem);
+    } 
+    &:hover .card-support {
+      transform: translateX(13rem);
+    }  
+    &:hover .card-about {
+      transform: translateX(26rem);
+    }  
+        
+  }
